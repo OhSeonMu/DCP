@@ -1,0 +1,50 @@
+================================================================================
+                   __   __ ___________                 _                        
+                   \ \ / //  ___| ___ \               | |                       
+                    \ V / \ `--.| |_/ / ___ _ __   ___| |__                     
+                    /   \  `--. \ ___ \/ _ \ '_ \ / __| '_ \                    
+                   / /^\ \/\__/ / |_/ /  __/ | | | (__| | | |                   
+                   \/   \/\____/\____/ \___|_| |_|\___|_| |_|                   
+
+================================================================================
+                    Developed at Argonne National Laboratory
+                                   Version: 20
+================================================================================
+                                  INPUT SUMMARY
+================================================================================
+Simulation Method:            History Based
+Grid Type:                    Unionized Grid
+Materials:                    12
+H-M Benchmark Size:           XL
+Total Nuclides:               355
+Gridpoints (per Nuclide):     238,847
+Unionized Energy Gridpoints:  84,790,685
+Particle Histories:           10,000,000
+XS Lookups per Particle:      34
+Total XS Lookups:             34
+Threads:                      26
+Est. Memory Usage (MB):       119,354
+Binary File Mode:             Off
+================================================================================
+                         INITIALIZATION - DO NOT PROFILE
+================================================================================
+Intializing nuclide grids...
+Intializing unionized grid...
+Intializing material data...
+Intialization complete. Allocated 119353 MB of data.
+
+================================================================================
+                                   SIMULATION
+================================================================================
+Beginning history based simulation...
+
+Simulation complete.
+================================================================================
+                                     RESULTS
+================================================================================
+Threads:     26
+Runtime:     269.321 seconds
+Lookups:     340,000,000
+Lookups/s:   1,262,433
+Verification checksum: 541237 (WARNING - INVALID CHECKSUM!)
+================================================================================

@@ -4,3 +4,6 @@
 [submodule "gapbs"]
 	path = gapbs
 	url = https://github.com/sbeamer/gapbs.git
+[submodule "JohnnyCache"]
+	path = JohnnyCache
+	url = https://github.com/BLepers/JohnnyCache.git

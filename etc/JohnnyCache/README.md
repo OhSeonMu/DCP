@@ -5,5 +5,6 @@ int isolate_hugetlb()
 {
   // ...
 }
+
 //Modification By OSM
 EXPORT_SYMBOL(isolate_hugetlb)

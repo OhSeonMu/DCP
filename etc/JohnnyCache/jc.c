@@ -121,7 +121,11 @@ struct migration_target_control {
  * Actual code of JC
  */
 static int max_conflicts = 0; // module parameter, maximize conflicts or minize them?
-#define CACHE_SIZE (48*512) // DRAM is 64GB -> cache is 48GB on our machine -> 48*512 2MB pages
+
+//Modification By OSM
+#define CACHE_SIZE (8*512)
+#define TOTAL_CACHE_SIZE (96*512) // DRAM is 64GB -> cache is 48GB on our machine -> 48*512 2MB pages
+
 #define RING_SIZE (1000000) // Compute stats on the last XX memory access samples
 #define CONTENTION_LEVELS 20 // Number of contention levels (to be in level N, a page must have been accessed heat_to_contention_level(N) times)
 #define PROBLEMATIC_CONTENTION 10 // If a page has been accessed more than that, it is hot
@@ -129,7 +133,11 @@ static int max_conflicts = 0; // module parameter, maximize conflicts or minize 
 
 #define LARGE_PAGE_SIZE (2LU*1024*1024) // 2MB
 #define pfn_to_large_pfn(pfn) ((pfn)/(512)) // 512 4KB pages in a 2MB page
-#define pfn_to_bucket(pfn) (pfn_to_large_pfn(pfn) % CACHE_SIZE)
+
+//Modification By OSM
+//#define pfn_to_bucket(pfn) (pfn_to_large_pfn(pfn) % CACHE_SIZE)
+#define pfn_to_bucket(pfn) (pfn_to_large_pfn(pfn) % TOTAL_CACHE_SIZE)
+#define test_pfn_to_bucket(pfn) (pfn_to_large_pfn(pfn) % TOTAL_CACHE_SIZE)
 
 #define HEAT_PRINT_SIZE 2048
 static char *printbuf;
@@ -271,10 +279,13 @@ static void add_sample(u64 pfn, int weight) {
       spin_unlock(&lock);
       if(found) {
          total_samples_found++;
-      } else if(total_samples % 10000 == 0) {
+      } 
+      // Modification By OSM
+      /*
+      else if(total_samples % 10000 == 0) {
          printk("Didn't find pfn %lu at GB %lu\n", (long unsigned)pfn, (long unsigned)pfn*4096/1024/1024/1024/100);
       }
-
+      */
       total_samples++;
    }
 }
@@ -286,6 +297,7 @@ static int add_new_page(struct page *page) {
    size_t bucket = pfn_to_bucket(page_to_pfn(page));
    size_t idx = heat_to_contention_level(atomic_read(&heatmap[bucket]));
    struct slot_list *s = kmalloc(sizeof(*s), GFP_KERNEL);
+   
    if(!s) {
       printk(KERN_INFO "Fail to allocate all the pages!\n");
       return -1;
@@ -389,6 +401,9 @@ static void build_page_list(void) {
    struct hstate *hstates = get_hstates();
    int hugetlb_max_hstate = get_max_hstates();
 
+   //Modification By OSM
+   size_t bucket;
+
    for(i = 0; i < CONTENTION_LEVELS; i++)
       INIT_LIST_HEAD(&unused_pages[i]);
    for(i = 0; i < CONTENTION_LEVELS; i++)
@@ -410,6 +425,11 @@ static void build_page_list(void) {
 
          if (PageHWPoison(page))
             continue;
+	
+	 //Modification By OSM
+	 bucket = pfn_to_bucket(page_to_pfn(page));
+	 if(CACHE_SIZE <= bucket)
+	    continue;
 
          nb_pages++;
          if(add_new_page(page) != 0)
@@ -440,18 +460,20 @@ static __attribute__((unused)) void check_list(void) {
       list_for_each_entry(s, &unused_pages[i], contention_list) {
          nb_entries++;
       }
-      printk("CHECK: contention[%lu] = %d entries\n", i, nb_entries);
+      printk("CHECK: contention[%lu] have %d unused page\n", i, nb_entries);
    }
-   return;
-   for(i = 0; i < CACHE_SIZE; i++) {
+   
+   for(i = 0; i < CACHE_SIZE/512; i++) {
       int nb_entries = 0, nb_allocated = 0;
-      list_for_each_entry(s, &cache_bins[i], bin_list) {
+      list_for_each_entry(s, &cache_bins[i*512], bin_list) {
          nb_entries++;
          if(s->used_by)
             nb_allocated++;
       }
-      printk("CHECK: cache_bins[%lu] = %d entries %d allocated %d heat\n", i, nb_entries, nb_allocated, atomic_read(&heatmap[i]));
+      printk("CHECK: cache_bins[%lu] have %d entries and %d allocated page in %d heat\n", i, nb_entries, nb_allocated, atomic_read(&heatmap[i*512]));
    }
+   
+   return;
 }
 
 
@@ -702,6 +724,18 @@ int s_migrate_pages(pid_t pid, unsigned long nr_pages, unsigned long *addresses,
 
 static int periodic_migrations(void* data)
 {
+   // Modification By OSM
+   while(true){
+      printk("OSM_CHECK_LIST");
+      check_list();
+      ssleep(1);
+   
+      if(kthread_should_stop()) {
+         printk("Exiting periodic migrations");
+         return 0;
+      }
+   }
+
    if(!ENABLE_PERIODIC_MIGRATIONS)
       return 0;
 
@@ -853,4 +887,9 @@ void cleanup_module(void)
 
 module_param(max_conflicts, int, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 MODULE_PARM_DESC(max_conflicts, "Set to 1 to maximize conflicts");
+
+//Modification By OSM
+//module_param(param_CACHE_SIZE, int, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+//MODULE_PARM_DESC(param_CACHE_SIZE, "Set DRAM CACHE SIZE");
+
 MODULE_LICENSE("GPL");

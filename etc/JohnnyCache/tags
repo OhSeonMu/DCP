@@ -1,0 +1,185 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CACHE_SIZE	jc.c	126;"	d	file:
+CACHE_SIZE	static_jc.c	126;"	d	file:
+CONTENTION_LEVELS	jc.c	130;"	d	file:
+CONTENTION_LEVELS	static_jc.c	130;"	d	file:
+DRAM_READ	jc.c	190;"	d	file:
+DRAM_READ	static_jc.c	190;"	d	file:
+ENABLE_PERIODIC_MIGRATIONS	jc.c	64;"	d	file:
+ENABLE_PERIODIC_MIGRATIONS	static_jc.c	64;"	d	file:
+ENABLE_SAMPLING	jc.c	63;"	d	file:
+ENABLE_SAMPLING	static_jc.c	63;"	d	file:
+HEAT_PRINT_SIZE	jc.c	140;"	d	file:
+HEAT_PRINT_SIZE	static_jc.c	140;"	d	file:
+INCLUDE_VERMAGIC	jc.mod.c	2;"	d	file:
+LARGE_PAGE_SIZE	jc.c	134;"	d	file:
+LARGE_PAGE_SIZE	static_jc.c	134;"	d	file:
+MAX_MIGRATED_PAGES	jc.c	132;"	d	file:
+MAX_MIGRATED_PAGES	static_jc.c	132;"	d	file:
+PEBS_SAMPLE_TYPE	jc.c	188;"	d	file:
+PEBS_SAMPLE_TYPE	static_jc.c	188;"	d	file:
+PMEM_READ	jc.c	189;"	d	file:
+PMEM_READ	static_jc.c	189;"	d	file:
+PROBLEMATIC_CONTENTION	jc.c	131;"	d	file:
+PROBLEMATIC_CONTENTION	static_jc.c	131;"	d	file:
+RING_SIZE	jc.c	129;"	d	file:
+RING_SIZE	static_jc.c	129;"	d	file:
+STORE_ALL	jc.c	191;"	d	file:
+STORE_ALL	static_jc.c	191;"	d	file:
+TOTAL_CACHE_SIZE	jc.c	127;"	d	file:
+TOTAL_CACHE_SIZE	static_jc.c	127;"	d	file:
+__get_pfnblock_flags_mask	jc.c	/^unsigned long __get_pfnblock_flags_mask(const struct page *page,$/;"	f	file:
+__get_pfnblock_flags_mask	static_jc.c	/^unsigned long __get_pfnblock_flags_mask(const struct page *page,$/;"	f	file:
+_find_task_by_vpid	jc.c	/^struct task_struct *_find_task_by_vpid(pid_t vnr)$/;"	f
+_find_task_by_vpid	static_jc.c	/^struct task_struct *_find_task_by_vpid(pid_t vnr)$/;"	f
+_minimize_conflicts	jc.c	/^static struct page *_minimize_conflicts(struct hstate *h, int nid, pid_t pid, struct vm_area_struct *vma, unsigned long addr)$/;"	f	file:
+_minimize_conflicts	static_jc.c	/^static struct page *_minimize_conflicts(struct hstate *h, int nid, pid_t pid, struct vm_area_struct *vma, unsigned long addr)$/;"	f	file:
+add_freed_page	jc.c	/^static int add_freed_page(struct page *page) {$/;"	f	file:
+add_freed_page	static_jc.c	/^static int add_freed_page(struct page *page) {$/;"	f	file:
+add_new_page	jc.c	/^static int add_new_page(struct page *page) {$/;"	f	file:
+add_new_page	static_jc.c	/^static int add_new_page(struct page *page) {$/;"	f	file:
+add_sample	jc.c	/^static void add_sample(u64 pfn, int weight) {$/;"	f	file:
+add_sample	static_jc.c	/^static void add_sample(u64 pfn, int weight) {$/;"	f	file:
+addresses	jc.c	/^   unsigned long *addresses;$/;"	m	struct:pid_pages	file:
+addresses	static_jc.c	/^   unsigned long *addresses;$/;"	m	struct:pid_pages	file:
+alloc_migration_target	jc.c	/^struct page *alloc_migration_target(struct page *old, unsigned long private) {$/;"	f
+alloc_migration_target	static_jc.c	/^struct page *alloc_migration_target(struct page *old, unsigned long private) {$/;"	f
+allocated_pages	jc.c	/^static struct list_head allocated_pages[CONTENTION_LEVELS]; \/\/ heat -> pages$/;"	v	typeref:struct:list_head	file:
+allocated_pages	static_jc.c	/^static struct list_head allocated_pages[CONTENTION_LEVELS]; \/\/ heat -> pages$/;"	v	typeref:struct:list_head	file:
+bin_list	jc.c	/^   struct list_head bin_list;$/;"	m	struct:slot_list	typeref:struct:slot_list::list_head	file:
+bin_list	static_jc.c	/^   struct list_head bin_list;$/;"	m	struct:slot_list	typeref:struct:slot_list::list_head	file:
+bucket	jc.c	/^   size_t bucket;$/;"	m	struct:slot_list	file:
+bucket	static_jc.c	/^   size_t bucket;$/;"	m	struct:slot_list	file:
+build_page_list	jc.c	/^static void build_page_list(void) {$/;"	f	file:
+build_page_list	static_jc.c	/^static void build_page_list(void) {$/;"	f	file:
+cache_bins	jc.c	/^static struct list_head cache_bins[CACHE_SIZE]; \/\/ cache slot -> pages$/;"	v	typeref:struct:list_head	file:
+cache_bins	static_jc.c	/^static struct list_head cache_bins[CACHE_SIZE]; \/\/ cache slot -> pages$/;"	v	typeref:struct:list_head	file:
+check_list	jc.c	/^static __attribute__((unused)) void check_list(void) {$/;"	f	file:
+check_list	static_jc.c	/^static __attribute__((unused)) void check_list(void) {$/;"	f	file:
+clean_container	jc.c	/^static void clean_container(struct pages_container *c) {$/;"	f	file:
+clean_container	static_jc.c	/^static void clean_container(struct pages_container *c) {$/;"	f	file:
+cleanup_module	jc.c	/^void cleanup_module(void)$/;"	f
+cleanup_module	static_jc.c	/^void cleanup_module(void)$/;"	f
+configs	jc.c	/^static size_t configs[] = { DRAM_READ, PMEM_READ, STORE_ALL };$/;"	v	file:
+configs	static_jc.c	/^static size_t configs[] = { DRAM_READ, PMEM_READ, STORE_ALL };$/;"	v	file:
+contention_list	jc.c	/^   struct list_head contention_list;$/;"	m	struct:slot_list	typeref:struct:slot_list::list_head	file:
+contention_list	static_jc.c	/^   struct list_head contention_list;$/;"	m	struct:slot_list	typeref:struct:slot_list::list_head	file:
+enqueue_freed_page	jc.c	/^static struct page *enqueue_freed_page(struct hstate *h, struct page *page) {$/;"	f	file:
+enqueue_freed_page	static_jc.c	/^static struct page *enqueue_freed_page(struct hstate *h, struct page *page) {$/;"	f	file:
+events	jc.c	/^static struct perf_event **events;$/;"	v	typeref:struct:perf_event	file:
+events	static_jc.c	/^static struct perf_event **events;$/;"	v	typeref:struct:perf_event	file:
+follow_page	jc.c	/^struct page *follow_page(struct vm_area_struct *vma, unsigned long address, unsigned int foll_flags)$/;"	f
+follow_page	static_jc.c	/^struct page *follow_page(struct vm_area_struct *vma, unsigned long address, unsigned int foll_flags)$/;"	f
+get_pageblock_bitmap	jc.c	/^static inline unsigned long *get_pageblock_bitmap(const struct page *page,$/;"	f	file:
+get_pageblock_bitmap	static_jc.c	/^static inline unsigned long *get_pageblock_bitmap(const struct page *page,$/;"	f	file:
+get_pfnblock_flags_mask	jc.c	/^unsigned long get_pfnblock_flags_mask(const struct page *page,$/;"	f
+get_pfnblock_flags_mask	static_jc.c	/^unsigned long get_pfnblock_flags_mask(const struct page *page,$/;"	f
+heat	jc.c	/^   int heat;$/;"	m	struct:slot_list	file:
+heat	static_jc.c	/^   int heat;$/;"	m	struct:slot_list	file:
+heat_to_contention_level	jc.c	/^static size_t heat_to_contention_level(int heat) {$/;"	f	file:
+heat_to_contention_level	static_jc.c	/^static size_t heat_to_contention_level(int heat) {$/;"	f	file:
+heated_pages	jc.c	/^static struct list_head heated_pages[CONTENTION_LEVELS]; \/\/ heat -> pages$/;"	v	typeref:struct:list_head	file:
+heated_pages	static_jc.c	/^static struct list_head heated_pages[CONTENTION_LEVELS]; \/\/ heat -> pages$/;"	v	typeref:struct:list_head	file:
+heatmap	jc.c	/^static atomic_t heatmap[CACHE_SIZE];$/;"	v	file:
+heatmap	static_jc.c	/^static atomic_t heatmap[CACHE_SIZE];$/;"	v	file:
+idx	jc.c	/^   atomic_t idx;$/;"	m	struct:ring	file:
+idx	static_jc.c	/^   atomic_t idx;$/;"	m	struct:ring	file:
+init_module	jc.c	/^int init_module(void)$/;"	f
+init_module	static_jc.c	/^int init_module(void)$/;"	f
+insert_page_in_container	jc.c	/^void insert_page_in_container(struct pages_container *c, pid_t tgid, unsigned long addr, struct page *page) {$/;"	f
+insert_page_in_container	static_jc.c	/^void insert_page_in_container(struct pages_container *c, pid_t tgid, unsigned long addr, struct page *page) {$/;"	f
+insert_pid_in_container	jc.c	/^struct pid_pages *insert_pid_in_container(struct pages_container *c, pid_t tgid) {$/;"	f
+insert_pid_in_container	static_jc.c	/^struct pid_pages *insert_pid_in_container(struct pages_container *c, pid_t tgid) {$/;"	f
+kthread	jc.c	/^struct task_struct *kthread;$/;"	v	typeref:struct:task_struct
+kthread	static_jc.c	/^struct task_struct *kthread;$/;"	v	typeref:struct:task_struct
+lock	jc.c	/^static spinlock_t lock; \/\/ list_heads are not thread safe...$/;"	v	file:
+lock	static_jc.c	/^static spinlock_t lock; \/\/ list_heads are not thread safe...$/;"	v	file:
+max_conflicts	jc.c	/^static int max_conflicts = 0; \/\/ module parameter, maximize conflicts or minize them?$/;"	v	file:
+max_conflicts	static_jc.c	/^static int max_conflicts = 0; \/\/ module parameter, maximize conflicts or minize them?$/;"	v	file:
+migration_target_control	jc.c	/^struct migration_target_control {$/;"	s	file:
+migration_target_control	static_jc.c	/^struct migration_target_control {$/;"	s	file:
+minimize_conflicts	jc.c	/^static struct page *minimize_conflicts(struct hstate *h, int nid) {$/;"	f	file:
+minimize_conflicts	static_jc.c	/^static struct page *minimize_conflicts(struct hstate *h, int nid) {$/;"	f	file:
+move_pages_contention	jc.c	/^static void move_pages_contention(size_t bucket, int heat) {$/;"	f	file:
+move_pages_contention	static_jc.c	/^static void move_pages_contention(size_t bucket, int heat) {$/;"	f	file:
+nb_max_pages	jc.c	/^   int nb_max_pages;$/;"	m	struct:pid_pages	file:
+nb_max_pages	static_jc.c	/^   int nb_max_pages;$/;"	m	struct:pid_pages	file:
+nb_pages	jc.c	/^   int nb_pages;$/;"	m	struct:pid_pages	file:
+nb_pages	static_jc.c	/^   int nb_pages;$/;"	m	struct:pid_pages	file:
+nb_pid	jc.c	/^   int nb_pid;$/;"	m	struct:pages_container	file:
+nb_pid	static_jc.c	/^   int nb_pid;$/;"	m	struct:pages_container	file:
+next	jc.c	/^   struct pid_pages *next;$/;"	m	struct:pid_pages	typeref:struct:pid_pages::pid_pages	file:
+next	static_jc.c	/^   struct pid_pages *next;$/;"	m	struct:pid_pages	typeref:struct:pid_pages::pid_pages	file:
+page	jc.c	/^   struct page *page;$/;"	m	struct:slot_list	typeref:struct:slot_list::page	file:
+page	static_jc.c	/^   struct page *page;$/;"	m	struct:slot_list	typeref:struct:slot_list::page	file:
+pages	jc.c	/^   struct page **pages;$/;"	m	struct:pid_pages	typeref:struct:pid_pages::page	file:
+pages	static_jc.c	/^   struct page **pages;$/;"	m	struct:pid_pages	typeref:struct:pid_pages::page	file:
+pages_container	jc.c	/^static struct pages_container {$/;"	s	file:
+pages_container	static_jc.c	/^static struct pages_container {$/;"	s	file:
+pages_to_migrate	jc.c	/^} pages_to_migrate;$/;"	v	typeref:struct:pages_container	file:
+pages_to_migrate	static_jc.c	/^} pages_to_migrate;$/;"	v	typeref:struct:pages_container	file:
+pebs_sample	jc.c	/^static void pebs_sample(struct perf_event *event, struct perf_sample_data *data, struct pt_regs *regs)$/;"	f	file:
+pebs_sample	static_jc.c	/^static void pebs_sample(struct perf_event *event, struct perf_sample_data *data, struct pt_regs *regs)$/;"	f	file:
+perf_virt_to_phys	jc.c	/^static u64 perf_virt_to_phys(u64 virt)$/;"	f	file:
+perf_virt_to_phys	static_jc.c	/^static u64 perf_virt_to_phys(u64 virt)$/;"	f	file:
+periodic_migrations	jc.c	/^static int periodic_migrations(void* data)$/;"	f	file:
+periodic_migrations	static_jc.c	/^static int periodic_migrations(void* data)$/;"	f	file:
+pfn	jc.c	/^      u64 pfn;$/;"	m	struct:ring::sample	file:
+pfn	static_jc.c	/^      u64 pfn;$/;"	m	struct:ring::sample	file:
+pfn_idx	jc.c	/^size_t pfn_idx = 0;$/;"	v
+pfn_idx	static_jc.c	/^size_t pfn_idx = 0;$/;"	v
+pfn_to_bitidx	jc.c	/^static inline int pfn_to_bitidx(const struct page *page, unsigned long pfn)$/;"	f	file:
+pfn_to_bitidx	static_jc.c	/^static inline int pfn_to_bitidx(const struct page *page, unsigned long pfn)$/;"	f	file:
+pfn_to_bucket	jc.c	136;"	d	file:
+pfn_to_bucket	static_jc.c	136;"	d	file:
+pfn_to_large_pfn	jc.c	135;"	d	file:
+pfn_to_large_pfn	static_jc.c	135;"	d	file:
+pfns	jc.c	/^uint64_t *pfns = NULL;$/;"	v
+pfns	static_jc.c	/^uint64_t *pfns = NULL;$/;"	v
+pid	jc.c	/^   pid_t pid;$/;"	m	struct:migration_target_control	file:
+pid	static_jc.c	/^   pid_t pid;$/;"	m	struct:migration_target_control	file:
+pid_pages	jc.c	/^struct pid_pages {$/;"	s	file:
+pid_pages	static_jc.c	/^struct pid_pages {$/;"	s	file:
+pids	jc.c	/^   struct pid_pages *pids;$/;"	m	struct:pages_container	typeref:struct:pages_container::pid_pages	file:
+pids	static_jc.c	/^   struct pid_pages *pids;$/;"	m	struct:pages_container	typeref:struct:pages_container::pid_pages	file:
+printbuf	jc.c	/^static char *printbuf;$/;"	v	file:
+printbuf	static_jc.c	/^static char *printbuf;$/;"	v	file:
+reserve_page	jc.c	/^static void reserve_page(struct hstate *h, int nid, pid_t pid, struct slot_list *s, int contention_idx, unsigned long addr)$/;"	f	file:
+reserve_page	static_jc.c	/^static void reserve_page(struct hstate *h, int nid, pid_t pid, struct slot_list *s, int contention_idx, unsigned long addr)$/;"	f	file:
+ring	jc.c	/^static struct ring {$/;"	s	file:
+ring	jc.c	/^} ring;$/;"	v	typeref:struct:ring	file:
+ring	static_jc.c	/^static struct ring {$/;"	s	file:
+ring	static_jc.c	/^} ring;$/;"	v	typeref:struct:ring	file:
+s_migrate_pages	jc.c	/^int s_migrate_pages(pid_t pid, unsigned long nr_pages, unsigned long *addresses, struct page **pages) {$/;"	f
+s_migrate_pages	static_jc.c	/^int s_migrate_pages(pid_t pid, unsigned long nr_pages, unsigned long *addresses, struct page **pages) {$/;"	f
+sample	jc.c	/^   struct sample {$/;"	s	struct:ring	file:
+sample	static_jc.c	/^   struct sample {$/;"	s	struct:ring	file:
+samples	jc.c	/^   } samples[RING_SIZE];$/;"	m	struct:ring	typeref:struct:ring::sample	file:
+samples	static_jc.c	/^   } samples[RING_SIZE];$/;"	m	struct:ring	typeref:struct:ring::sample	file:
+size_to_hstate	jc.c	/^struct hstate *size_to_hstate(unsigned long size)$/;"	f
+size_to_hstate	static_jc.c	/^struct hstate *size_to_hstate(unsigned long size)$/;"	f
+slot_list	jc.c	/^struct slot_list {$/;"	s	file:
+slot_list	static_jc.c	/^struct slot_list {$/;"	s	file:
+test_pfn_to_bucket	jc.c	138;"	d	file:
+test_pfn_to_bucket	static_jc.c	138;"	d	file:
+tgid	jc.c	/^   pid_t tgid;$/;"	m	struct:pid_pages	file:
+tgid	static_jc.c	/^   pid_t tgid;$/;"	m	struct:pid_pages	file:
+total_allocated_pages	jc.c	/^static int total_allocated_pages = 0;$/;"	v	file:
+total_allocated_pages	static_jc.c	/^static int total_allocated_pages = 0;$/;"	v	file:
+total_samples	jc.c	/^uint64_t total_samples = 0;$/;"	v
+total_samples	static_jc.c	/^uint64_t total_samples = 0;$/;"	v
+total_samples_found	jc.c	/^uint64_t total_samples_found = 0;$/;"	v
+total_samples_found	static_jc.c	/^uint64_t total_samples_found = 0;$/;"	v
+unused_pages	jc.c	/^static struct list_head unused_pages[CONTENTION_LEVELS]; \/\/ heat -> pages$/;"	v	typeref:struct:list_head	file:
+unused_pages	static_jc.c	/^static struct list_head unused_pages[CONTENTION_LEVELS]; \/\/ heat -> pages$/;"	v	typeref:struct:list_head	file:
+used_by	jc.c	/^   size_t used_by; \/\/ tgid$/;"	m	struct:slot_list	file:
+used_by	static_jc.c	/^   size_t used_by; \/\/ tgid$/;"	m	struct:slot_list	file:
+virt_addr	jc.c	/^   size_t virt_addr;$/;"	m	struct:slot_list	file:
+virt_addr	static_jc.c	/^   size_t virt_addr;$/;"	m	struct:slot_list	file:
+weight	jc.c	/^      int weight;$/;"	m	struct:ring::sample	file:
+weight	static_jc.c	/^      int weight;$/;"	m	struct:ring::sample	file:

@@ -1,1 +1,0 @@
-cmd_/home/osm/DCP/etc/JohnnyCache/jc.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/osm/DCP/etc/JohnnyCache/jc.ko /home/osm/DCP/etc/JohnnyCache/jc.o /home/osm/DCP/etc/JohnnyCache/jc.mod.o;  true

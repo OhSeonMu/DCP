@@ -1,1 +1,0 @@
-cmd_/home/osm/DCP/etc/JohnnyCache/Module.symvers :=  sed 's/ko$$/o/'  /home/osm/DCP/etc/JohnnyCache/modules.order | scripts/mod/modpost -m -a    -o /home/osm/DCP/etc/JohnnyCache/Module.symvers -e -i Module.symvers -T - 

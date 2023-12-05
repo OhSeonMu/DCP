@@ -43,8 +43,8 @@ Simulation complete.
                                      RESULTS
 ================================================================================
 Threads:     26
-Runtime:     12.612 seconds
+Runtime:     12.897 seconds
 Lookups:     340,000,000
-Lookups/s:   26,958,300
+Lookups/s:   26,361,790
 Verification checksum: 902195 (WARNING - INVALID CHECKSUM!)
 ================================================================================

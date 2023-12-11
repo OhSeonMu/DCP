@@ -1,0 +1,1 @@
+cmd_/home/osm/DCP/code/static/Module.symvers :=  sed 's/ko$$/o/'  /home/osm/DCP/code/static/modules.order | scripts/mod/modpost -m -a    -o /home/osm/DCP/code/static/Module.symvers -e -i Module.symvers -T - 

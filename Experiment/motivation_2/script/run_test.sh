@@ -14,16 +14,16 @@ Gapbs_output_path="/home/osm/DCP/Experiment/motivation_2/output"
 
 # Set JC module
 # for DRAM_CACHE_SIZE in 96 92 88 84 80 76 72 68 64 60 56 52 48 44 40 363 32 28 24 20 16 12 8 4
-for DRAM_CACHE_SIZE in 24 48
+for DRAM_CACHE_SIZE in 40 80 160 320 1600 3200
 do
 	# Set JC module
-	NEW_LINE="#define CACHE_SIZE ($DRAM_CACHE_SIZE*512)"
+	NEW_LINE="#define CACHE_SIZE ($DRAM_CACHE_SIZE)"
 	sed -i "${LINE_NUMBER}s/.*/$NEW_LINE/" "$JC_MODULE_PATH/static.c"
 	cd $JC_MODULE_PATH
 	make
 	sudo insmod $JC_MODULE_PATH/static.ko
 	echo $DRAM_CACHE_SIZE	
-	for size in "XL"
+	for size in "large"
 	do
 		TCMALLOC_MEMFS_MALLOC_PATH=$TCMALLOC_PATH LD_PRELOAD=$PRELOAD_PATH $XSBench_path/XSBench -s $size -p 10000000 > $XSBench_output_path/Static_XSBench_${size}_${DRAM_CACHE_SIZE}
 	done

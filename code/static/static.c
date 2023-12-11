@@ -123,8 +123,8 @@ struct migration_target_control {
 static int max_conflicts = 0; // module parameter, maximize conflicts or minize them?
 
 //Modification By OSM
-#define CACHE_SIZE (48*512)
-#define TOTAL_CACHE_SIZE (96*512) // DRAM is 64GB -> cache is 48GB on our machine -> 48*512 2MB pages
+#define CACHE_SIZE (40)
+#define TOTAL_CACHE_SIZE (12*512) // DRAM is 64GB -> cache is 48GB on our machine -> 48*512 2MB pages
 
 #define RING_SIZE (1000000) // Compute stats on the last XX memory access samples
 #define CONTENTION_LEVELS 20 // Number of contention levels (to be in level N, a page must have been accessed heat_to_contention_level(N) times)
@@ -455,6 +455,10 @@ static void build_page_list(void) {
 static __attribute__((unused)) void check_list(void) {
    size_t i;
    struct slot_list *s;
+  
+   //Modification By OSM
+   return;
+   
    for(i = 0; i < CONTENTION_LEVELS; i++) {
       int nb_entries = 0;
       list_for_each_entry(s, &unused_pages[i], contention_list) {
@@ -726,7 +730,7 @@ static int periodic_migrations(void* data)
 {
    // Modification By OSM
    while(true){
-      printk("OSM_CHECK_LIST");
+      //printk("OSM_CHECK_LIST");
       ssleep(1);
    
       if(kthread_should_stop()) {

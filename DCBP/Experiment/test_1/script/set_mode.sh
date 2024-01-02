@@ -8,5 +8,5 @@ if [ $1 == "Memory_Mode" ]; then
 elif [ $1 == "App_Direct" ]; then
 	sudo ipmctl create -goal PersistentMemoryType=AppDirect
 elif [ $1 == "Mixed_Mode" ]; then
-	sudo ipmctl create -goal MemoryMode=50 PersistentMemoryType=AppDirect
+	sudo ipmctl create -goal MemoryMode=40 PersistentMemoryType=AppDirect
 fi

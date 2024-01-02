@@ -15,15 +15,15 @@
 Simulation Method:            History Based
 Grid Type:                    Unionized Grid
 Materials:                    12
-H-M Benchmark Size:           XL
+H-M Benchmark Size:           XXL
 Total Nuclides:               355
-Gridpoints (per Nuclide):     238,847
-Unionized Energy Gridpoints:  84,790,685
+Gridpoints (per Nuclide):     501,578
+Unionized Energy Gridpoints:  178,060,190
 Particle Histories:           500,000
 XS Lookups per Particle:      34
 Total XS Lookups:             34
 Threads:                      26
-Est. Memory Usage (MB):       119,354
+Est. Memory Usage (MB):       250,642
 Binary File Mode:             Off
 ================================================================================
                          INITIALIZATION - DO NOT PROFILE
@@ -31,7 +31,7 @@ Binary File Mode:             Off
 Intializing nuclide grids...
 Intializing unionized grid...
 Intializing material data...
-Intialization complete. Allocated 119353 MB of data.
+Intialization complete. Allocated 250642 MB of data.
 
 ================================================================================
                                    SIMULATION
@@ -43,8 +43,8 @@ Simulation complete.
                                      RESULTS
 ================================================================================
 Threads:     26
-Runtime:     31.450 seconds
+Runtime:     34.617 seconds
 Lookups:     17,000,000
-Lookups/s:   540,542
-Verification checksum: 34866 (WARNING - INVALID CHECKSUM!)
+Lookups/s:   491,083
+Verification checksum: 31851 (WARNING - INVALID CHECKSUM!)
 ================================================================================
